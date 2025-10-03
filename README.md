@@ -1,28 +1,16 @@
-# Existing content or placeholder text that might be in the README
+# InstaPaglu - Instagram Downloader
 
-## New Content
-# Instagram Video Downloader
-
-A simple, modern, and responsive web app to download public Instagram videos by link.
+A simple, modern, and responsive web app to download public Instagram content by link.
 
 ---
 
 ## Features
-- **Paste Instagram video link** and download the video as `.mp4`
-- **Frontend:** HTML + Tailwind CSS, responsive, minimal UI
-- **Backend:** Node.js + Express
-- **No user data stored**; videos are deleted from the server after 1 hour
-- **Clear error handling** for invalid, private, or unavailable videos
-- **Disclaimer:** For personal use only. Respect Instagram’s terms of service
-
----
-
-## How It Works
-1. **User** pastes a public Instagram video link and clicks "Download"
-2. **Frontend** validates the link and sends it to the backend
-3. **Backend** fetches the video using `instagram-url-direct` and stores it temporarily
-4. **Frontend** shows a "Download Video" button if successful, or an error message if not
-5. **Video files** are auto-deleted after 1 hour
+- **Download Multiple Media Types:** Paste an Instagram link to download Videos, Photos, Reels, and IGTV.
+- **Simple Interface:** Clean and minimal UI built with HTML and Tailwind CSS.
+- **Python Backend:** A robust backend powered by Python and FastAPI.
+- **Temporary Storage:** All downloaded files are automatically deleted from the server after 1 hour.
+- **Error Handling:** Clear feedback for invalid links or private content.
+- **SEO Optimized:** Basic on-page SEO implemented for better search engine visibility.
 
 ---
 
@@ -34,18 +22,30 @@ git clone https://github.com/gogi2811/instapaglu.git
 cd instapaglu
 ```
 
-### 2. Install dependencies
+### 2. Create a Virtual Environment
+It is recommended to use a virtual environment to manage dependencies.
 ```bash
-npm install
+# For macOS/Linux
+python3 -m venv venv
+source venv/bin/activate
+
+# For Windows
+python -m venv venv
+venv\Scripts\activate
 ```
 
-### 3. Start the server
+### 3. Install dependencies
 ```bash
-npm start
+pip install -r requirements.txt
 ```
 
-- The app runs on [http://localhost:3000](http://localhost:3000)
-- Open in your browser and use the interface
+### 4. Start the server
+```bash
+python server.py
+```
+
+- The application will be available at [http://localhost:3000](http://localhost:3000).
+- Open the URL in your browser to use the downloader.
 
 ---
 
@@ -54,35 +54,30 @@ npm start
 instapaglu/
 ├── public/
 │   ├── index.html      # Main frontend UI
-│   └── main.js         # Frontend logic (validation, fetch, UI states)
-├── server/
-│   ├── index.js        # Express backend
-│   └── instaDownloader.js # Video download logic
-├── package.json        # Node.js dependencies and scripts
+│   ├── main.js         # Frontend logic
+│   └── logo.svg        # Application logo
+├── server.py           # FastAPI backend
+├── insta_downloader.py # Media download logic
+├── requirements.txt    # Python dependencies
+├── .gitignore          # Git ignore file
 └── README.md           # This file
 ```
 
 ---
 
-## API
-### POST `/download`
-- **Body:** `{ url: "<instagram_video_url>" }`
-- **Response:** `{ downloadUrl: "/videos/filename.mp4" }` on success, or `{ error: "..." }` on failure
-
----
-
-## Limitations & Notes
-- Only works for **public** Instagram videos (not stories, private, or IGTV)
-- If Instagram changes its structure, the downloader may need updating
-- No user data is stored; all files are deleted after 1 hour
+## SEO Enhancements
+This project includes several on-page SEO improvements to help with search engine ranking:
+- **Descriptive Title:** The HTML title is optimized for clarity and keywords.
+- **Meta Tags:** Includes `description` and `keywords` meta tags to provide more context to search engines.
+- **Semantic HTML:** The page structure uses semantic tags like `<main>`, `<header>`, and `<footer>`.
+- **Image Alt Text:** The logo image has descriptive alt text.
 
 ---
 
 ## Disclaimer
-> For personal use only. This tool is not affiliated with Instagram. Please respect Instagram’s terms of service and copyright laws.
+> This tool is for personal use only. It is not affiliated with Instagram or Meta. Please respect Instagram’s terms of service and copyright laws when downloading and using content.
 
 ---
 
 ## License
 MIT
-# instapaglu
