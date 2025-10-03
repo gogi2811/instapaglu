@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instagram Video Downloader</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md text-center">
+    <h1 class="text-2xl font-bold mb-4">Instagram Video Downloader</h1>
+    <form id="downloadForm" class="space-y-4">
+      <input id="instaUrl" type="text" placeholder="Paste Instagram video link here..." class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-blue-400" required />
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition">Download</button>
+      <div id="spinner" class="hidden flex justify-center"><svg class="animate-spin h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path></svg></div>
+      <div id="errorMsg" class="text-red-500 text-sm"></div>
+      <div id="successMsg" class="mt-4"></div>
+    </form>
+    <p class="text-xs text-gray-500 mt-6">Enter a valid Instagram video link to download.</p>
+    <p class="text-xs text-gray-400 mt-2">For personal use only. Respect Instagram’s terms of service.</p>
+  </div>
+  <script src="main.js"></script>
+</body>
+</html>
